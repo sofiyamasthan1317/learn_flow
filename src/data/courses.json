@@ -1,0 +1,46 @@
+[
+  {
+    "id": "js",
+    "title": "JavaScript Basics",
+    "description": "Master the fundamentals of JavaScript — variables, functions, arrays, and modern ES6+ syntax.",
+    "icon": "⚡",
+    "color": "from-yellow-400 to-orange-500",
+    "lessons": ["js-l1", "js-l2", "js-l3"],
+    "quizId": "js-q1",
+    "duration": "2h 30m",
+    "level": "Beginner"
+  },
+  {
+    "id": "react",
+    "title": "React Fundamentals",
+    "description": "Learn React from scratch — components, hooks, state management, and building real UIs.",
+    "icon": "⚛️",
+    "color": "from-cyan-400 to-blue-500",
+    "lessons": ["react-l1", "react-l2", "react-l3"],
+    "quizId": "react-q1",
+    "duration": "3h 15m",
+    "level": "Intermediate"
+  },
+  {
+    "id": "ts",
+    "title": "TypeScript Essentials",
+    "description": "Add type safety to your JavaScript. Learn types, interfaces, generics, and best practices.",
+    "icon": "🔷",
+    "color": "from-blue-500 to-indigo-600",
+    "lessons": ["ts-l1", "ts-l2", "ts-l3"],
+    "quizId": "ts-q1",
+    "duration": "2h 45m",
+    "level": "Intermediate"
+  },
+  {
+    "id": "css",
+    "title": "CSS & Tailwind",
+    "description": "From CSS basics to Tailwind utility classes. Build beautiful, responsive layouts fast.",
+    "icon": "🎨",
+    "color": "from-pink-400 to-rose-500",
+    "lessons": ["css-l1", "css-l2", "css-l3"],
+    "quizId": "css-q1",
+    "duration": "2h 00m",
+    "level": "Beginner"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "js-l1",
+    "courseId": "js",
+    "title": "Variables & Data Types",
+    "duration": "20 min",
+    "content": "# Variables & Data Types\n\nJavaScript has three ways to declare variables:\n\n## var, let, and const\n\n```js\nvar name = 'Alice';   // old way, avoid\nlet age = 25;         // block-scoped, reassignable\nconst PI = 3.14;      // block-scoped, constant\n```\n\n## Data Types\n\nJavaScript has 7 primitive types:\n\n- **String** — `'hello'`, `\"world\"`, `` `template` ``\n- **Number** — `42`, `3.14`, `NaN`, `Infinity`\n- **Boolean** — `true` or `false`\n- **Undefined** — variable declared but not assigned\n- **Null** — intentional absence of value\n- **Symbol** — unique identifier\n- **BigInt** — large integers\n\n## Type Checking\n\n```js\ntypeof 'hello'     // 'string'\ntypeof 42          // 'number'\ntypeof true        // 'boolean'\ntypeof undefined   // 'undefined'\ntypeof null        // 'object' (a known JS quirk!)\ntypeof Symbol()    // 'symbol'\n```\n\n## Template Literals\n\n```js\nconst name = 'World';\nconsole.log(`Hello, ${name}!`); // Hello, World!\n```"
+  },
+  {
+    "id": "js-l2",
+    "courseId": "js",
+    "title": "Functions & Scope",
+    "duration": "25 min",
+    "content": "# Functions & Scope\n\n## Function Declaration\n\n```js\nfunction greet(name) {\n  return `Hello, ${name}!`;\n}\n```\n\n## Arrow Functions\n\n```js\nconst greet = (name) => `Hello, ${name}!`;\n\n// Multi-line arrow function\nconst add = (a, b) => {\n  const result = a + b;\n  return result;\n};\n```\n\n## Default Parameters\n\n```js\nconst greet = (name = 'Stranger') => `Hello, ${name}!`;\ngreet();         // Hello, Stranger!\ngreet('Alice');  // Hello, Alice!\n```\n\n## Scope\n\n```js\nlet x = 'global';\n\nfunction test() {\n  let x = 'local'; // different variable\n  console.log(x);  // 'local'\n}\n\nconsole.log(x); // 'global'\n```\n\n## Closures\n\n```js\nfunction counter() {\n  let count = 0;\n  return () => ++count;\n}\n\nconst increment = counter();\nincrement(); // 1\nincrement(); // 2\nincrement(); // 3\n```"
+  },
+  {
+    "id": "js-l3",
+    "courseId": "js",
+    "title": "Arrays & Objects",
+    "duration": "30 min",
+    "content": "# Arrays & Objects\n\n## Array Methods\n\n```js\nconst nums = [1, 2, 3, 4, 5];\n\nnums.map(n => n * 2);        // [2, 4, 6, 8, 10]\nnums.filter(n => n > 2);     // [3, 4, 5]\nnums.reduce((acc, n) => acc + n, 0); // 15\nnums.find(n => n > 3);       // 4\nnums.includes(3);            // true\n```\n\n## Destructuring\n\n```js\n// Array destructuring\nconst [first, second, ...rest] = [1, 2, 3, 4];\n// first=1, second=2, rest=[3,4]\n\n// Object destructuring\nconst { name, age, city = 'Unknown' } = user;\n```\n\n## Spread Operator\n\n```js\nconst arr1 = [1, 2, 3];\nconst arr2 = [...arr1, 4, 5]; // [1,2,3,4,5]\n\nconst obj1 = { a: 1 };\nconst obj2 = { ...obj1, b: 2 }; // {a:1, b:2}\n```\n\n## Object Methods\n\n```js\nconst user = { name: 'Alice', age: 25 };\n\nObject.keys(user);    // ['name', 'age']\nObject.values(user);  // ['Alice', 25]\nObject.entries(user); // [['name','Alice'],['age',25]]\n```"
+  },
+  {
+    "id": "react-l1",
+    "courseId": "react",
+    "title": "Components & JSX",
+    "duration": "25 min",
+    "content": "# Components & JSX\n\n## What is a Component?\n\nA component is a reusable piece of UI — like a LEGO brick.\n\n```tsx\nfunction Button({ label, onClick }) {\n  return (\n    <button onClick={onClick}>\n      {label}\n    </button>\n  );\n}\n```\n\n## JSX Rules\n\n```tsx\n// 1. Single root element\nreturn (\n  <div>\n    <h1>Hello</h1>\n    <p>World</p>\n  </div>\n);\n\n// 2. Use className, not class\n<div className=\"container\">\n\n// 3. Self-close empty elements\n<img src=\"img.png\" />\n<input type=\"text\" />\n\n// 4. JavaScript in curly braces\n<p>{2 + 2}</p>          // 4\n<p>{user.name}</p>      // Alice\n```\n\n## Props\n\n```tsx\nfunction Card({ title, description, image }) {\n  return (\n    <div className=\"card\">\n      <img src={image} alt={title} />\n      <h2>{title}</h2>\n      <p>{description}</p>\n    </div>\n  );\n}\n\n// Usage\n<Card\n  title=\"React Course\"\n  description=\"Learn React\"\n  image=\"/img/react.png\"\n/>\n```"
+  },
+  {
+    "id": "react-l2",
+    "courseId": "react",
+    "title": "useState & useEffect",
+    "duration": "30 min",
+    "content": "# useState & useEffect\n\n## useState\n\n```tsx\nimport { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>\n        Increment\n      </button>\n    </div>\n  );\n}\n```\n\n## State with Objects\n\n```tsx\nconst [user, setUser] = useState({ name: '', age: 0 });\n\n// Always spread when updating objects!\nsetUser(prev => ({ ...prev, name: 'Alice' }));\n```\n\n## useEffect\n\n```tsx\nimport { useEffect } from 'react';\n\n// Runs after every render\nuseEffect(() => {\n  console.log('rendered!');\n});\n\n// Runs once on mount\nuseEffect(() => {\n  fetchData();\n}, []);\n\n// Runs when count changes\nuseEffect(() => {\n  document.title = `Count: ${count}`;\n}, [count]);\n\n// Cleanup\nuseEffect(() => {\n  const timer = setInterval(() => {}, 1000);\n  return () => clearInterval(timer); // cleanup!\n}, []);\n```"
+  },
+  {
+    "id": "react-l3",
+    "courseId": "react",
+    "title": "Custom Hooks",
+    "duration": "25 min",
+    "content": "# Custom Hooks\n\nCustom hooks let you extract and reuse stateful logic.\n\n## Rules of Hooks\n\n1. Only call hooks at the **top level**\n2. Only call hooks from **React functions**\n3. Name always starts with **use**\n\n## Example: useFetch\n\n```tsx\nfunction useFetch<T>(url: string) {\n  const [data, setData] = useState<T | null>(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState<string | null>(null);\n\n  useEffect(() => {\n    fetch(url)\n      .then(res => res.json())\n      .then(data => {\n        setData(data);\n        setLoading(false);\n      })\n      .catch(err => {\n        setError(err.message);\n        setLoading(false);\n      });\n  }, [url]);\n\n  return { data, loading, error };\n}\n\n// Usage\nconst { data, loading, error } = useFetch('/api/courses');\n```\n\n## Example: useDebounce\n\n```tsx\nfunction useDebounce<T>(value: T, delay: number): T {\n  const [debounced, setDebounced] = useState(value);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setDebounced(value), delay);\n    return () => clearTimeout(timer);\n  }, [value, delay]);\n\n  return debounced;\n}\n```"
+  },
+  {
+    "id": "ts-l1",
+    "courseId": "ts",
+    "title": "Types & Interfaces",
+    "duration": "25 min",
+    "content": "# Types & Interfaces\n\n## Basic Types\n\n```ts\nlet name: string = 'Alice';\nlet age: number = 25;\nlet active: boolean = true;\nlet data: null = null;\nlet id: undefined = undefined;\n```\n\n## Arrays & Tuples\n\n```ts\nlet nums: number[] = [1, 2, 3];\nlet strs: Array<string> = ['a', 'b'];\n\n// Tuple — fixed length, known types\nlet pair: [string, number] = ['Alice', 25];\n```\n\n## Interface\n\n```ts\ninterface User {\n  id: number;\n  name: string;\n  email: string;\n  age?: number; // optional\n  readonly createdAt: Date; // read-only\n}\n\nconst user: User = {\n  id: 1,\n  name: 'Alice',\n  email: 'alice@example.com',\n  createdAt: new Date(),\n};\n```\n\n## Type Alias\n\n```ts\ntype Status = 'active' | 'inactive' | 'pending';\ntype ID = string | number;\n\ntype Course = {\n  id: string;\n  title: string;\n  lessons: string[];\n};\n```"
+  },
+  {
+    "id": "ts-l2",
+    "courseId": "ts",
+    "title": "Generics",
+    "duration": "30 min",
+    "content": "# Generics\n\nGenerics let you write reusable, type-safe code.\n\n## Basic Generic\n\n```ts\nfunction identity<T>(value: T): T {\n  return value;\n}\n\nidentity<string>('hello'); // string\nidentity<number>(42);      // number\n```\n\n## Generic Interface\n\n```ts\ninterface ApiResponse<T> {\n  data: T;\n  status: number;\n  message: string;\n}\n\ntype UserResponse = ApiResponse<User>;\ntype CoursesResponse = ApiResponse<Course[]>;\n```\n\n## Generic Constraints\n\n```ts\nfunction getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key];\n}\n\nconst user = { name: 'Alice', age: 25 };\ngetProperty(user, 'name'); // 'Alice'\ngetProperty(user, 'xyz');  // Error! 'xyz' not in user\n```\n\n## Generic React Component\n\n```tsx\ninterface ListProps<T> {\n  items: T[];\n  renderItem: (item: T) => ReactNode;\n}\n\nfunction List<T>({ items, renderItem }: ListProps<T>) {\n  return <ul>{items.map(renderItem)}</ul>;\n}\n```"
+  },
+  {
+    "id": "ts-l3",
+    "courseId": "ts",
+    "title": "Utility Types",
+    "duration": "20 min",
+    "content": "# Utility Types\n\nTypeScript ships with built-in utility types.\n\n## Partial & Required\n\n```ts\ninterface User {\n  name: string;\n  age: number;\n  email: string;\n}\n\ntype PartialUser = Partial<User>;\n// { name?: string; age?: number; email?: string }\n\ntype RequiredUser = Required<PartialUser>;\n// All fields required again\n```\n\n## Pick & Omit\n\n```ts\ntype UserPreview = Pick<User, 'name' | 'email'>;\n// { name: string; email: string }\n\ntype UserWithoutAge = Omit<User, 'age'>;\n// { name: string; email: string }\n```\n\n## Record\n\n```ts\ntype Scores = Record<string, number>;\nconst scores: Scores = { quiz1: 90, quiz2: 85 };\n```\n\n## ReturnType & Parameters\n\n```ts\nfunction fetchUser(id: number): Promise<User> { ... }\n\ntype FetchReturn = ReturnType<typeof fetchUser>;\n// Promise<User>\n\ntype FetchParams = Parameters<typeof fetchUser>;\n// [id: number]\n```"
+  },
+  {
+    "id": "css-l1",
+    "courseId": "css",
+    "title": "CSS Fundamentals",
+    "duration": "20 min",
+    "content": "# CSS Fundamentals\n\n## The Box Model\n\nEvery element is a box with:\n- **Content** — the actual content\n- **Padding** — space inside the border\n- **Border** — the border line\n- **Margin** — space outside the border\n\n```css\n.box {\n  width: 200px;\n  padding: 16px;\n  border: 2px solid #333;\n  margin: 24px;\n  box-sizing: border-box; /* padding included in width */\n}\n```\n\n## Flexbox\n\n```css\n.container {\n  display: flex;\n  justify-content: space-between; /* horizontal */\n  align-items: center;            /* vertical */\n  gap: 16px;\n  flex-wrap: wrap;\n}\n```\n\n## Grid\n\n```css\n.grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: auto;\n  gap: 24px;\n}\n\n/* Responsive grid */\n.grid {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n```"
+  },
+  {
+    "id": "css-l2",
+    "courseId": "css",
+    "title": "Tailwind CSS",
+    "duration": "25 min",
+    "content": "# Tailwind CSS\n\nTailwind is a utility-first CSS framework.\n\n## Core Idea\n\nInstead of writing CSS classes, you compose utilities directly in HTML:\n\n```html\n<!-- Traditional CSS -->\n<div class=\"card\">...</div>\n\n<!-- Tailwind -->\n<div class=\"bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition\">\n```\n\n## Common Utilities\n\n```jsx\n// Layout\n<div className=\"flex items-center justify-between gap-4\">\n<div className=\"grid grid-cols-3 gap-6\">\n\n// Spacing\n<div className=\"p-4 px-6 py-2 m-4 mt-8\">\n\n// Typography\n<h1 className=\"text-3xl font-bold text-gray-900\">\n<p className=\"text-sm text-gray-500 leading-relaxed\">\n\n// Colors\n<div className=\"bg-blue-500 text-white border border-blue-600\">\n\n// Responsive\n<div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3\">\n\n// Dark mode\n<div className=\"bg-white dark:bg-gray-900 text-gray-900 dark:text-white\">\n```\n\n## Hover & Focus States\n\n```jsx\n<button className=\"\n  bg-blue-500 text-white px-4 py-2 rounded-lg\n  hover:bg-blue-600\n  focus:outline-none focus:ring-2 focus:ring-blue-400\n  transition-colors duration-200\n\">\n  Click me\n</button>\n```"
+  },
+  {
+    "id": "css-l3",
+    "courseId": "css",
+    "title": "Animations & Transitions",
+    "duration": "25 min",
+    "content": "# Animations & Transitions\n\n## CSS Transitions\n\n```css\n.button {\n  background: blue;\n  transform: scale(1);\n  transition: all 0.2s ease-in-out;\n}\n\n.button:hover {\n  background: darkblue;\n  transform: scale(1.05);\n}\n```\n\n## CSS Keyframes\n\n```css\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\n\n.card {\n  animation: fadeIn 0.3s ease-out forwards;\n}\n```\n\n## Framer Motion (React)\n\n```tsx\nimport { motion } from 'framer-motion';\n\n// Basic animation\n<motion.div\n  initial={{ opacity: 0, y: 20 }}\n  animate={{ opacity: 1, y: 0 }}\n  transition={{ duration: 0.4 }}\n>\n\n// Hover animation\n<motion.button\n  whileHover={{ scale: 1.05 }}\n  whileTap={{ scale: 0.95 }}\n>\n\n// Page transition\n<motion.div\n  initial={{ opacity: 0 }}\n  animate={{ opacity: 1 }}\n  exit={{ opacity: 0 }}\n>\n```"
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "js-q1",
+    "courseId": "js",
+    "title": "JavaScript Basics Quiz",
+    "questions": [
+      {
+        "question": "Which keyword declares a block-scoped variable that can be reassigned?",
+        "options": ["var", "let", "const", "function"],
+        "answer": "let"
+      },
+      {
+        "question": "What does typeof null return in JavaScript?",
+        "options": ["'null'", "'undefined'", "'object'", "'boolean'"],
+        "answer": "'object'"
+      },
+      {
+        "question": "Which array method returns a NEW array with transformed elements?",
+        "options": ["forEach", "filter", "map", "reduce"],
+        "answer": "map"
+      },
+      {
+        "question": "What is the output of: console.log(typeof undefined)?",
+        "options": ["'null'", "'undefined'", "'object'", "'void'"],
+        "answer": "'undefined'"
+      },
+      {
+        "question": "Which syntax creates a template literal?",
+        "options": ["'Hello ${name}'", "\"Hello ${name}\"", "`Hello ${name}`", "(Hello ${name})"],
+        "answer": "`Hello ${name}`"
+      }
+    ]
+  },
+  {
+    "id": "react-q1",
+    "courseId": "react",
+    "title": "React Fundamentals Quiz",
+    "questions": [
+      {
+        "question": "What hook do you use to add state to a functional component?",
+        "options": ["useEffect", "useRef", "useState", "useContext"],
+        "answer": "useState"
+      },
+      {
+        "question": "What attribute replaces 'class' in JSX?",
+        "options": ["class", "className", "htmlClass", "cssClass"],
+        "answer": "className"
+      },
+      {
+        "question": "When does useEffect with an empty dependency array [] run?",
+        "options": ["On every render", "Only on unmount", "Only on mount", "Never"],
+        "answer": "Only on mount"
+      },
+      {
+        "question": "What must every custom hook name start with?",
+        "options": ["get", "handle", "use", "on"],
+        "answer": "use"
+      },
+      {
+        "question": "How do you pass data from parent to child in React?",
+        "options": ["State", "Props", "Context", "Ref"],
+        "answer": "Props"
+      }
+    ]
+  },
+  {
+    "id": "ts-q1",
+    "courseId": "ts",
+    "title": "TypeScript Essentials Quiz",
+    "questions": [
+      {
+        "question": "Which utility type makes all properties of an interface optional?",
+        "options": ["Required<T>", "Partial<T>", "Pick<T>", "Omit<T>"],
+        "answer": "Partial<T>"
+      },
+      {
+        "question": "What does the 'readonly' modifier do in TypeScript?",
+        "options": ["Makes the file read-only", "Prevents reassignment of a property", "Hides a property", "Makes it public"],
+        "answer": "Prevents reassignment of a property"
+      },
+      {
+        "question": "Which syntax defines a generic function?",
+        "options": ["function f(T)(val)", "function f<T>(val: T)", "function<T> f(val)", "T function f(val)"],
+        "answer": "function f<T>(val: T)"
+      },
+      {
+        "question": "What is a union type?",
+        "options": ["Two types merged into one object", "A type that can be one of several types", "An array of types", "A class with multiple interfaces"],
+        "answer": "A type that can be one of several types"
+      },
+      {
+        "question": "Which utility type selects specific keys from a type?",
+        "options": ["Omit<T,K>", "Exclude<T,K>", "Pick<T,K>", "Extract<T,K>"],
+        "answer": "Pick<T,K>"
+      }
+    ]
+  },
+  {
+    "id": "css-q1",
+    "courseId": "css",
+    "title": "CSS & Tailwind Quiz",
+    "questions": [
+      {
+        "question": "Which Tailwind class makes an element use flexbox?",
+        "options": ["flex-box", "display-flex", "flex", "d-flex"],
+        "answer": "flex"
+      },
+      {
+        "question": "What does 'box-sizing: border-box' do?",
+        "options": ["Adds a border to the box", "Includes padding and border in the element's width", "Removes the margin", "Adds a shadow"],
+        "answer": "Includes padding and border in the element's width"
+      },
+      {
+        "question": "Which Tailwind prefix applies styles only in dark mode?",
+        "options": ["night:", "dark:", "theme-dark:", "black:"],
+        "answer": "dark:"
+      },
+      {
+        "question": "Which CSS property controls space between flex/grid children?",
+        "options": ["margin", "padding", "gap", "spacing"],
+        "answer": "gap"
+      },
+      {
+        "question": "What does 'grid-template-columns: repeat(3, 1fr)' create?",
+        "options": ["3 rows of equal height", "3 columns of equal width", "A 3x3 grid", "3 fixed 1px columns"],
+        "answer": "3 columns of equal width"
+      }
+    ]
+  }
+]

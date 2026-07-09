@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: white;
+  color: #111827;
+}
+
+.dark body {
+  background-color: #030712; /* gray-950 */
+  color: #f3f4f6;            /* gray-100 */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+code, pre {
+  font-family: 'Fira Code', monospace;
+}
